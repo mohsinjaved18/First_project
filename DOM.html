@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marksheet</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <div style="width: 100%; height: 55px; text-align: center; padding-top: 10px; border-radius: 10px; border-bottom: 4px solid black;">
+            <h2>MARKSHEET</h2>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 first">
+                <h1>Information</h1>
+                <form method="get">
+                    <input type="text" id="getname" placeholder="Enter Your Name :">
+                    <br><br>
+
+                    <input type="text" id="getfname" placeholder="Enter Your Father Name :">
+                    <br><br>
+
+                    <input type="text" id="getphy" placeholder="Enter Your Physics Marks :">
+                    <br><br>
+
+                    <input type="text" id="getcom" placeholder="Enter Your Computer Marks :">
+                    <br><br>
+
+                    <input type="text" id="getmath" placeholder="Enter Your Math Marks :">
+                </form>
+                <br>
+                <button type="submit" onclick="myfucntion()">submit</button>
+            </div>
+            <div class="col-lg-6 second">
+                <p id="setname"></p>
+                <p id="setfname"></p>
+                <p id="setphy"></p>
+                <p id="setcom"></p>
+                <p id="setmath"></p>
+                <p id="settm"></p>
+                <p id="setom"></p>
+                <p id="setper"></p>
+                <p id="setgrade"></p>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        function myfucntion()
+        {
+            let name = document.getElementById("getname").value;
+            let fname = document.getElementById("getfname").value;
+            let phy = document.getElementById("getphy").value;
+            let com = document.getElementById("getcom").value;
+            let math = document.getElementById("getmath").value;
+            let tm = 300;
+            let om = parseInt(phy) + parseInt(com) + parseInt(math);
+            let per = om/tm*100
+
+
+            document.getElementById("setname").innerHTML="Student Name Is :" + name;
+            document.getElementById("setfname").innerHTML="Student Father Name Is :" + fname;
+            document.getElementById("setphy").innerHTML="Physics Marks Is :" + phy;
+            document.getElementById("setcom").innerHTML="Computer Marks Is :" + com;
+            document.getElementById("setmath").innerHTML="Math Marks Is :" + math;
+            document.getElementById("settm").innerHTML="Total Marks Is :" + tm;
+            document.getElementById("setom").innerHTML="Obtain Marks Is :" + om;
+            document.getElementById("setper").innerHTML="Student Percentage Is :" + parseInt(per) + "%";
+
+
+            var grade;
+            if(per>=90)
+        {
+            document.getElementById("setgrade").innerHTML="Grade : A+"
+        }else if(per>=80)
+        {
+            document.getElementById("setgrade").innerHTML="Grade : A"
+        }else if(per>=70)
+        {
+            document.getElementById("setgrade").innerHTML="Grade : B+"
+        }else if(per>=60)
+        {
+            document.getElementById("setgrade").innerHTML="Grade : B"
+        }else if(per>=50)
+        {
+            document.getElementById("setgrade").innerHTML="Grade : c"
+        }else if(per>=40)
+        {
+            document.getElementById("setgrade").innerHTML="Grade : D"
+        }else{
+            document.getElementById("setgrade").innerHTML="<b>STUDENT IS FAIL</b>"
+        }
+        }
+    </script>
+
+
+</body>
+</html>
