@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<school rollno="1">
+<student>
+<name>Abbas Ali</name>
+<class>9th</class>
+</student>
+<student>
+<name>Hussain</name>
+<class>10th</class>
+</student>
+<student>
+<name>Akbar</name>
+<class>8th</class>
+</student>
+<student>
+<name>Tahir</name>
+<class>12th</class>
+</student>
+</school>
